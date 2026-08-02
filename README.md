@@ -17,22 +17,22 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 ## 🎬 Demo
 
 <!-- Video demo of the interactive filter panel and dashboard navigation -->
-https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-VIDEO-ID
+videos/Mercedes_Dashboard_Demo_Readme.mp4
 
 <!-- If GitHub doesn't auto-embed, use: -->
-<!-- [Watch the demo](assets/demo/Mercedes_Dashboard_Demo.mp4) -->
+<!-- [Watch the demo](demo videos/Mercedes_Dashboard_Demo.mp4) -->
 
 | Executive Overview | Model Performance |
 |---|---|
-| ![Executive Overview](assets/screenshots/executive_overview.png) | ![Model Performance](assets/screenshots/model_performance.png) |
+| ![Executive Overview](image/executive_overview.png) | ![Model Performance](image/model_performance.png) |
 
 | Regional Insights | Profitability Analysis |
 |---|---|
-| ![Regional Insights](assets/screenshots/regional_insights.png) | ![Profitability Analysis](assets/screenshots/profitability_analysis.png) |
+| ![Regional Insights](image/regional_insights.png) | ![Profitability Analysis](image/profitability_analysis.png) |
 
 | Time Trends | Model × Region Cross-Analysis |
 |---|---|
-| ![Time Trends](assets/screenshots/time_trends.png) | ![Cross Analysis](assets/screenshots/cross_analysis.png) |
+| ![Time Trends](image/time_trends.png) | ![Cross Analysis](image/cross_analysis.png) |
 
 ---
 
@@ -41,17 +41,17 @@ https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-VIDEO-ID
 ```
 Mercedes-Benz-Sales-Analytics/
 │
-├── assets/
-│   ├── screenshots/
-│   │   ├── cover_page.png
-│   │   ├── executive_overview.png
-│   │   ├── model_performance.png
-│   │   ├── regional_insights.png
-│   │   ├── profitability_analysis.png
-│   │   ├── time_trends.png
-│   │   └── cross_analysis.png
-│   └── demo/
-│       └── Mercedes_Dashboard_Demo.mp4
+├── image/
+│   ├── cover_page.png
+│   ├── executive_overview.png
+│   ├── model_performance.png
+│   ├── regional_insights.png
+│   ├── profitability_analysis.png
+│   ├── time_trends.png
+│   └── cross_analysis.png
+│
+├── demo videos/
+│   └── Mercedes_Dashboard_Demo.mp4
 │
 ├── data/
 │   ├── raw/
