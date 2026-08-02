@@ -1,13 +1,10 @@
 # Mercedes-Benz Sales Analytics
 
 End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.
-
-<<<<<<< HEAD
-![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI][https://img.shields.io/badge/dashboard-Power](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
-
-=======
-![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
->>>>>>> f508576 (Update README.md)
+![Status](https://img.shields.io/badge/status-complete-brightgreen)
+![Python](https://img.shields.io/badge/python-pandas-blue)
+![SQLite](https://img.shields.io/badge/database-SQLite-lightgrey)
+![Power BI](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
 
 ---
 
