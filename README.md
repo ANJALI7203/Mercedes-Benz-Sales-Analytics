@@ -2,11 +2,8 @@
 
 End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.
 
-![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power
+![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI]([https://img.shields.io/badge/dashboard-Power](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
 
-https://github.com/user-attachments/assets/be0abd99-b46f-44f3-8e58-9cf0aeb0e57f
-
-BI-yellow)
 
 ---
 
@@ -19,10 +16,8 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 ---
 
 ## 🎬 Demo
+https://github.com/user-attachments/assets/be0abd99-b46f-44f3-8e58-9cf0aeb0e57f
 
-**Video walkthrough:** [Watch the demo](videos/Mercedes_Dashboard_Demo_Readme.mp4)
-
-> Note: GitHub only auto-plays inline video if it was uploaded through the GitHub web editor (drag-and-drop into the README edit box), which generates a `user-attachments/assets/...` link. A relative repo path like the one above will show as a clickable download link instead of an inline player — still functional, just not auto-embedded.
 
 | Executive Overview | Model Performance |
 |---|---|
