@@ -16,23 +16,21 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 
 ## 🎬 Demo
 
-<!-- Video demo of the interactive filter panel and dashboard navigation -->
-videos/Mercedes_Dashboard_Demo_Readme.mp4
+**Video walkthrough:** [Watch the demo](videos/Mercedes_Dashboard_Demo_Readme.mp4)
 
-<!-- If GitHub doesn't auto-embed, use: -->
-<!-- [Watch the demo](demo videos/Mercedes_Dashboard_Demo.mp4) -->
+> Note: GitHub only auto-plays inline video if it was uploaded through the GitHub web editor (drag-and-drop into the README edit box), which generates a `user-attachments/assets/...` link. A relative repo path like the one above will show as a clickable download link instead of an inline player — still functional, just not auto-embedded.
 
 | Executive Overview | Model Performance |
 |---|---|
-| ![Executive Overview](image/executive_overview.png) | ![Model Performance](image/model_performance.png) |
+| ![Executive Overview](image/Executive%20Overview.png) | ![Model Performance](image/Model%20Performance.png) |
 
 | Regional Insights | Profitability Analysis |
 |---|---|
-| ![Regional Insights](image/regional_insights.png) | ![Profitability Analysis](image/profitability_analysis.png) |
+| ![Regional Insights](image/Regional%20Insights.png) | ![Profitability Analysis](image/Profitability%20Analysis.png) |
 
 | Time Trends | Model × Region Cross-Analysis |
 |---|---|
-| ![Time Trends](image/time_trends.png) | ![Cross Analysis](image/cross_analysis.png) |
+| ![Time Trends](image/Sales%20Performance.png) | ![Cross Analysis](image/Strategic%20Insights.png) |
 
 ---
 
@@ -42,16 +40,16 @@ videos/Mercedes_Dashboard_Demo_Readme.mp4
 Mercedes-Benz-Sales-Analytics/
 │
 ├── image/
-│   ├── cover_page.png
-│   ├── executive_overview.png
-│   ├── model_performance.png
-│   ├── regional_insights.png
-│   ├── profitability_analysis.png
-│   ├── time_trends.png
-│   └── cross_analysis.png
+│   ├── Cover Page.png
+│   ├── Executive Overview.png
+│   ├── Model Performance.png
+│   ├── Regional Insights.png
+│   ├── Profitability Analysis.png
+│   ├── Sales Performance.png       # Time Trends page
+│   └── Strategic Insights.png      # Model x Region Cross-Analysis page
 │
-├── demo videos/
-│   └── Mercedes_Dashboard_Demo.mp4
+├── videos/
+│   └── Mercedes_Dashboard_Demo_Readme.mp4
 │
 ├── data/
 │   ├── raw/
@@ -78,6 +76,10 @@ Mercedes-Benz-Sales-Analytics/
 ├── .gitignore
 └── README.md
 ```
+
+> **Note on filenames:** Several image files above contain spaces (e.g. `Executive Overview.png`). This works with `%20`-encoded markdown links (used above), but spaces in filenames are a common source of broken links in git tools, terminals, and other renderers. If you run into issues, renaming to `executive-overview.png` style (no spaces) is more robust — just update the links above to match.
+
+> **Note on page naming:** `Sales Performance.png` and `Strategic Insights.png` correspond to the **Time Trends** and **Model × Region Cross-Analysis** pages respectively (per the Power BI cover page tile names). Consider aligning the cover page tile labels, sidebar, and filenames to use the same names throughout the project for consistency.
 
 ---
 
