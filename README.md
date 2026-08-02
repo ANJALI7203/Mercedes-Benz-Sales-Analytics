@@ -1,6 +1,6 @@
 # Mercedes-Benz Sales Analytics
 
-End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.
+End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.</br>
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Python](https://img.shields.io/badge/python-pandas-blue)
 ![SQLite](https://img.shields.io/badge/database-SQLite-lightgrey)
