@@ -2,7 +2,11 @@
 
 End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.
 
-![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power BI-yellow)
+![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power
+
+https://github.com/user-attachments/assets/be0abd99-b46f-44f3-8e58-9cf0aeb0e57f
+
+BI-yellow)
 
 ---
 
