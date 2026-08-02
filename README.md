@@ -22,7 +22,7 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 
 | Executive Overview | Model Performance |
 |---|---|
-| ![Executive Overview](image/Executive_Overview.png) | ![Model Performance](image/Model_Performance.png) |
+| ![Executive Overview](images/Executive_Overview.png) | ![Model Performance](image/Model_Performance.png) |
 
 | Regional Insights | Profitability Analysis |
 |---|---|
