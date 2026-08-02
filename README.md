@@ -26,11 +26,11 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 
 | Regional Insights | Profitability Analysis |
 |---|---|
-| ![Regional Insights](images/Regional_Insights.png) | ![Profitability Analysis](images/Probablity_Analysis.png) |
+| ![Regional Insights](images/Regional_Insights.png) | ![Profitability Analysis](images/Profitability_Analysis.png) |
 
 | Time Trends | Model × Region Cross-Analysis |
 |---|---|
-| ![Time Trends](image/Sales_Performance.png) | ![Cross Analysis](image/Strategic_Insights.png) |
+| ![Time Trends](images/Sales_Performance.png) | ![Cross Analysis](images/Strategic_Insights.png) |
 
 ---
 
