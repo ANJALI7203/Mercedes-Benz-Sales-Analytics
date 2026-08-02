@@ -1,6 +1,6 @@
 # Mercedes-Benz Sales Analytics
 
-End-to-end **Business Intelligence** project demonstrating a complete analytics workflow from raw sales data to executive dashboards using **Python, SQLite, Microsoft SQL Server (SSMS), SQL, and Power BI**.
+End-to-end **Business Intelligence** project taking Mercedes-Benz sales data from raw CSV to executive dashboard using **Python, SQLite, Microsoft SQL Server (SSMS), SQL, and Power BI**.
 
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Python](https://img.shields.io/badge/python-pandas-blue)
@@ -10,69 +10,21 @@ End-to-end **Business Intelligence** project demonstrating a complete analytics 
 
 ---
 
-# 📊 Overview
+## 📊 Overview
 
-This project analyzes Mercedes-Benz sales data across models, regions, and time (2023–2025) through a complete Business Intelligence workflow.
+This project analyzes Mercedes-Benz sales data across models, regions, and time (2023–2025) through a complete BI workflow: raw data is cleaned and feature-engineered in **Python**, normalized into **SQLite**, migrated into **Microsoft SQL Server via SSMS** for analysis with 50+ SQL queries, and visualized in a 7-page interactive **Power BI** dashboard.
 
-Raw sales data is cleaned and feature-engineered using **Python**, normalized into a **SQLite** database, exported as flat CSV files, imported into **Microsoft SQL Server using SQL Server Management Studio (SSMS)** for SQL analysis, and finally visualized through an interactive **7-page Power BI dashboard**.
-
-The objective is to demonstrate a complete analytics workflow—from raw data preparation to business insights and executive reporting—rather than focusing solely on visualization.
-
----
-
-# ✨ Project Highlights
-
-- End-to-End Business Intelligence Project
-- Python ETL Pipeline
-- Data Validation & Cleaning
-- Feature Engineering
-- SQLite Database Design
-- CSV Export & SQL Server Import
-- SQL Analysis using SSMS
-- 50+ Business SQL Queries
-- Window Functions (`LAG`, `DENSE_RANK`)
-- 7-Page Interactive Power BI Dashboard
-- Executive Mercedes-Benz Theme
-- Interactive Filter Panel with Bookmarks
-- Dynamic DAX Measures
-- Executive KPI Reporting
-
----
-
-# 🏗 Analytics Workflow
+The goal is to demonstrate a full, reproducible analytics pipeline — not just a dashboard.
 
 ```text
-                    Raw CSV Dataset
-                           │
-                           ▼
-                Python ETL Pipeline
-        (Validation • Cleaning • Feature Engineering)
-                           │
-                           ▼
-                  SQLite Database
-                           │
-                           ▼
-                  Export CSV Files
-                           │
-                           ▼
-     Microsoft SQL Server (SSMS Import)
-                           │
-                           ▼
-                 SQL Business Analysis
-                           │
-                           ▼
-               Power BI Dashboard
+Raw CSV ──▶ Python ETL ──▶ SQLite ──▶ CSV Export ──▶ SQL Server (SSMS) ──▶ SQL Analysis ──▶ Power BI
 ```
 
 ---
 
-# 🎬 Dashboard Demo
+## 🎬 Demo
 
 https://github.com/user-attachments/assets/be0abd99-b46f-44f3-8e58-9cf0aeb0e57f
-
----
-
-# 📸 Dashboard Preview
 
 | Cover Page | Executive Overview |
 |------------|--------------------|
@@ -82,62 +34,46 @@ https://github.com/user-attachments/assets/be0abd99-b46f-44f3-8e58-9cf0aeb0e57f
 |-------------------|------------------|
 | ![](images/Model_Performance.png) | ![](images/Regional_Insights.png) |
 
-| Profitability Analysis | Sales Performance |
+| Profitability Analysis | Sales Performance (Time Trends) |
 |------------------------|------------------|
 | ![](images/Profitability_Analysis.png) | ![](images/Sales_Performance.png) |
 
-| Strategic Insights |
+| Strategic Insights (Model × Region Cross-Analysis) |
 |--------------------|
 | ![](images/Strategic_Insights.png) |
 
 ---
 
-# 📈 Key Business Insights
+## 📈 Key Insights
 
-- GLC generated the highest revenue across all Mercedes-Benz models.
-- North region contributed the highest overall revenue.
-- Profit Margin remained above **28%** across the dataset.
-- Revenue consistently increased throughout the three-year period.
-- Premium SUV models generated the highest profitability.
-- Revenue peaked during **October 2024**.
-- Model × Region analysis revealed strong regional buying preferences.
+- **GLC** generated the highest revenue across all models
+- **North** region contributed the highest overall revenue
+- Profit margin held **above 28%** across the full dataset
+- Revenue trended upward consistently across the 3-year period
+- Revenue peaked in **October 2024**
+- Model × Region analysis revealed clear regional buying preferences
 
-# 📁 Project Structure
+---
+
+## 📁 Project Structure
 
 ```text
 Mercedes-Benz-Sales-Analytics/
-
 │
-├── images/
-│   ├── Cover_Page.png
-│   ├── Executive_Overview.png
-│   ├── Model_Performance.png
-│   ├── Regional_Insights.png
-│   ├── Profitability_Analysis.png
-│   ├── Sales_Performance.png
-│   └── Strategic_Insights.png
-│
-├── videos/
-│   └── Mercedes_Dashboard_Demo.mp4
+├── images/                          # Dashboard screenshots
+├── videos/                          # Demo video
 │
 ├── data/
-│   ├── raw/
-│   │   ├── Mercedes_Sales_Data.csv
-│   │   └── Mercedes_Sales_Data.xlsx
-│   │
-│   └── cleaned/
-│       ├── mercedes_cleaned.csv
-│       ├── mercedes.db
-│       ├── Sales.csv
-│       ├── Models.csv
-│       └── Regions.csv
+│   ├── raw/                         # Mercedes_Sales_Data.csv / .xlsx
+│   └── cleaned/                     # mercedes_cleaned.csv, mercedes.db,
+│                                     # Sales.csv, Models.csv, Regions.csv
 │
 ├── scripts/
-│   ├── etl_pipeline.py
-│   └── export_sqlite_tables.py
+│   ├── etl_pipeline.py              # Load → validate → clean → engineer → export
+│   └── export_sqlite_tables.py      # Export SQLite tables to CSV
 │
 ├── sql/
-│   └── analysis_queries.sql
+│   └── analysis_queries.sql         # 50+ business SQL queries
 │
 ├── powerbi/
 │   └── Mercedes_Sales_Dashboard.pbix
@@ -149,500 +85,134 @@ Mercedes-Benz-Sales-Analytics/
 
 ---
 
-# 🔧 ETL Pipeline
+## 🔧 ETL Pipeline (`scripts/etl_pipeline.py`)
 
-The ETL process was built using **Python** and **Pandas** to transform raw sales data into an analysis-ready dataset.
+| Stage | What happens |
+|---|---|
+| **Load** | Read raw CSV, validate schema |
+| **Validate** | Check missing values, duplicate Record_IDs, invalid profit/units, Z-score price outliers |
+| **Clean** | Remove duplicates, fill missing `Region` with `"Unknown"`, flag (not delete) outliers and loss-making records |
+| **Feature Engineer** | `Profit_Margin_Pct`, `Price_Tier`, `Unit_Tier` |
+| **Export** | `mercedes_cleaned.csv` + normalized SQLite database (`mercedes.db`) |
 
-### Load
-
-- Import raw CSV dataset
-- Validate schema
-- Read sales records
-
-### Validate
-
-The pipeline automatically checks for:
-
-- Missing values
-- Duplicate Record IDs
-- Invalid profit values
-- Invalid units sold
-- Price outliers using Z-Score analysis
-
-### Clean
-
-The cleaning process performs:
-
-- Duplicate removal
-- Missing value handling
-- Standardized region values
-- Financial data validation
-- Outlier flagging
-- Loss-making transaction preservation
-
-### Feature Engineering
-
-Additional business metrics are created including:
-
-- Profit Margin %
-- Price Tier
-- Unit Tier
-- Revenue
-- Business Categories
-
-### Export
-
-The ETL pipeline generates:
-
-- Clean analytical CSV
-- SQLite Database
-- Normalized relational tables
+**Database schema** (star-schema style):
+- **Sales** (fact) — Revenue, Profit, Units Sold, Date, Model_ID, Region_ID, Profit Margin, Price Tier, Unit Tier
+- **Models** (dimension) — Model_ID, Model
+- **Regions** (dimension) — Region_ID, Region
 
 ---
 
-# 🗄 Database Schema
+## 🗄 Data Migration: SQLite → SQL Server
 
-The project follows a **star-schema inspired design** with one fact table and two dimension tables.
-
-## Fact Table
-
-### Sales
-
-Contains:
-
-- Revenue
-- Profit
-- Units Sold
-- Date
-- Model_ID
-- Region_ID
-- Profit Margin
-- Price Tier
-- Unit Tier
-
----
-
-## Dimension Tables
-
-### Models
-
-- Model_ID
-- Model
-
-### Regions
-
-- Region_ID
-- Region
-
-This normalized structure minimizes redundancy while supporting efficient SQL analysis.
-
----
-
-# 🔄 Data Migration Workflow
-
-To demonstrate interoperability across database platforms, the normalized SQLite database was exported into flat CSV files and imported into **Microsoft SQL Server** using **SQL Server Management Studio (SSMS)**.
-
-This approach mirrors a real-world analytics workflow where data is transformed before being migrated into an enterprise database for querying and reporting.
-
-### Migration Pipeline
+To demonstrate cross-platform interoperability, the normalized SQLite tables are exported to CSV and imported into **Microsoft SQL Server via SSMS** for the SQL analysis phase — mirroring a real-world workflow where data lands in an enterprise database before reporting.
 
 ```text
-SQLite Database
-        │
-        ▼
-Export Individual Tables
-        │
-        ▼
-Sales.csv
-Models.csv
-Regions.csv
-        │
-        ▼
-Microsoft SQL Server
-        │
-        ▼
-SQL Server Management Studio
-        │
-        ▼
-Business SQL Analysis
+SQLite → export Sales/Models/Regions.csv → SQL Server (SSMS) → SQL Analysis
 ```
 
 ---
 
-# 📂 Generated Outputs
+## 📝 SQL Analysis (`sql/analysis_queries.sql`)
 
-After executing the ETL pipeline, the following files are produced:
+**50+ queries** across 12 sections: database exploration, join validation, sales KPIs, model performance, regional analysis, model × region cross-analysis, time-series trends, price/unit tier analysis, data quality flags, advanced rankings & contributions, a reusable SQL view, and final validation against Python/Power BI outputs.
 
-| Output | Description |
-|---------|-------------|
-| mercedes_cleaned.csv | Clean analytical dataset |
-| mercedes.db | Normalized SQLite database |
-| Sales.csv | Fact table export |
-| Models.csv | Dimension table |
-| Regions.csv | Dimension table |
-
-These outputs are then imported into SQL Server for analytical querying and Power BI visualization.
-
-# 📝 SQL Business Analysis
-
-After migrating the cleaned data into **Microsoft SQL Server**, analytical SQL queries were executed using **SQL Server Management Studio (SSMS)** to answer business questions and validate the dataset.
-
-The project contains **50+ SQL queries** organized into multiple analytical sections.
+Demonstrates joins, `GROUP BY`/`HAVING`, `CASE`, CTEs, views, subqueries, and window functions (`DENSE_RANK()`, `LAG()`).
 
 ---
 
-## SQL Analysis Areas
+## 📊 Power BI Dashboard
 
-| Category | Business Objective |
-|----------|--------------------|
-| Database Exploration | Understand dataset structure |
-| Data Validation | Verify table relationships and integrity |
-| Sales KPIs | Revenue, Profit, Units Sold |
-| Model Performance | Top & Bottom Performing Models |
-| Regional Analysis | Compare Regional Performance |
-| Model × Region Analysis | Cross-analysis of sales trends |
-| Time-Series Analysis | Monthly & Quarterly Trends |
-| Price Tier Analysis | Performance across Price Segments |
-| Unit Tier Analysis | Sales Distribution |
-| Advanced Analytics | Rankings, Contributions & Comparisons |
-| SQL Views | Reusable analytical views |
-| Final Validation | Cross-check SQL outputs with Power BI |
+7-page interactive report with an executive Mercedes-Benz theme:
 
----
+| Page | Covers |
+|---|---|
+| **Cover Page** | Branding, navigation |
+| **Executive Overview** | Total Revenue, Profit, Units Sold, Margin, Revenue Trend, Revenue by Region |
+| **Model Performance** | Revenue/profit/units by model, rankings |
+| **Regional Insights** | Revenue/profit/units by region, market contribution |
+| **Profitability Analysis** | Margin, Revenue-to-Profit ratio, profit contribution |
+| **Sales Performance** | Monthly/quarterly trends, YoY & MoM growth |
+| **Strategic Insights** | Model × Region heatmap, top combinations, regional preferences |
 
-## SQL Concepts Demonstrated
-
-The project demonstrates practical SQL skills including:
-
-- SELECT
-- WHERE
-- GROUP BY
-- ORDER BY
-- HAVING
-- INNER JOIN
-- LEFT JOIN
-- CASE
-- Common Table Expressions (CTEs)
-- Views
-- Aggregate Functions
-- Window Functions
-- DENSE_RANK()
-- LAG()
-- Date Functions
-- Subqueries
+**Interactive features:** bookmark-driven filter panel (Model, Region, Date, Year) with Apply/Reset; consistent region color-coding across all charts; dynamic DAX measures; "Unknown" region retained in tables for auditability but excluded from charts/KPIs.
 
 ---
 
-# 📊 Power BI Dashboard
-
-The final report consists of **7 interactive pages** designed with an executive-style Mercedes-Benz theme.
-
----
-
-## Dashboard Pages
-
-### 1️⃣ Cover Page
-
-- Mercedes-Benz branding
-- Interactive navigation
-- Dashboard overview
-
----
-
-### 2️⃣ Executive Overview
-
-Displays high-level KPIs including:
-
-- Total Revenue
-- Total Profit
-- Units Sold
-- Profit Margin
-- Revenue Trend
-- Revenue by Region
-
----
-
-### 3️⃣ Model Performance
-
-Analyze sales performance across vehicle models.
-
-Includes:
-
-- Revenue by Model
-- Profit by Model
-- Units Sold
-- Top Performing Models
-- Model Rankings
-
----
-
-### 4️⃣ Regional Insights
-
-Analyze business performance across geographical regions.
-
-Includes:
-
-- Revenue Distribution
-- Profit Distribution
-- Units Sold
-- Regional Rankings
-- Market Contribution
-
----
-
-### 5️⃣ Profitability Analysis
-
-Focuses on profitability metrics.
-
-Visuals include:
-
-- Profit Margin
-- Revenue vs Profit
-- Margin Comparison
-- Profit Contribution
-- Revenue-to-Profit Ratio
-
----
-
-### 6️⃣ Sales Performance
-
-Time-based performance analysis.
-
-Includes:
-
-- Monthly Revenue
-- Quarterly Revenue
-- Monthly Profit
-- Year-over-Year Trends
-- Month-over-Month Growth
-
----
-
-### 7️⃣ Strategic Insights
-
-Cross-dimensional business analysis.
-
-Visuals include:
-
-- Model × Region Heatmap
-- Top Revenue Combinations
-- Profit Comparison
-- Regional Preferences
-- Business Summary
-
----
-
-# 💡 Dashboard Features
-
-The dashboard includes several interactive capabilities:
-
-- Executive KPI Cards
-- Interactive Navigation
-- Dynamic Filter Panel
-- Bookmark Navigation
-- Apply & Reset Filters
-- Dynamic DAX Measures
-- Interactive Charts
-- Consistent Color Palette
-- Executive Layout
-- Responsive Design
-- Professional Mercedes-Benz Branding
-
----
-
-# 📈 Key Dashboard KPIs
-
-The dashboard tracks:
-
-- Total Revenue
-- Total Profit
-- Units Sold
-- Profit Margin
-- Average Selling Price
-- Revenue Growth
-- Top Performing Model
-- Top Performing Region
-- Revenue Contribution
-- Profit Contribution
-
----
-
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 | Technology | Purpose |
 |------------|----------|
-| Python | ETL Pipeline |
-| Pandas | Data Cleaning & Feature Engineering |
-| SQLite | Intermediate Database |
-| Microsoft SQL Server | Business Data Storage |
-| SQL Server Management Studio (SSMS) | SQL Development |
-| SQL | Business Analysis |
-| Power BI | Dashboard Development |
-| DAX | KPI Calculations |
-| Git | Version Control |
-| GitHub | Project Hosting |
+| Python (pandas) | ETL, cleaning, feature engineering |
+| SQLite | Intermediate relational database |
+| Microsoft SQL Server + SSMS | Business data storage & SQL development |
+| SQL | Business analysis (joins, window functions, views) |
+| Power BI + DAX | Dashboard & KPI calculations |
+| Git / GitHub | Version control, hosting |
 
 ---
 
-# 🎯 Skills Demonstrated
-
-This project showcases practical skills in:
-
-- Data Cleaning
-- Data Validation
-- ETL Development
-- Database Design
-- SQL Query Writing
-- Business Intelligence
-- Dashboard Development
-- Data Visualization
-- DAX
-- Data Migration
-- Business Analytics
-- Git Version Control
-
-# 🚀 How to Run
-
-## 1. Clone the Repository
+## 🚀 How to Run
 
 ```bash
+# 1. Clone
 git clone https://github.com/ANJALI7203/Mercedes-Benz-Sales-Analytics.git
 cd Mercedes-Benz-Sales-Analytics
-```
 
----
-
-## 2. Install Dependencies
-
-```bash
+# 2. Install dependencies
 pip install -r requirements.txt
-```
 
----
-
-## 3. Run the ETL Pipeline
-
-Execute the ETL script to clean the raw dataset, perform feature engineering, and generate the analytical outputs.
-
-```bash
+# 3. Run ETL
 python scripts/etl_pipeline.py
-```
+# → produces mercedes_cleaned.csv and mercedes.db
 
-Generated outputs:
-
-- `mercedes_cleaned.csv`
-- `mercedes.db`
-
----
-
-## 4. Export SQLite Tables
-
-Export normalized SQLite tables into flat CSV files.
-
-```bash
+# 4. Export SQLite tables to CSV
 python scripts/export_sqlite_tables.py
+# → produces Sales.csv, Models.csv, Regions.csv
+
+# 5. Import into SQL Server via SSMS, then run:
+#    sql/analysis_queries.sql
+
+# 6. Open the dashboard
+#    powerbi/Mercedes_Sales_Dashboard.pbix
+#    (refresh data source if paths have moved)
 ```
 
-Generated files:
-
-- Sales.csv
-- Models.csv
-- Regions.csv
-
 ---
 
-## 5. Import into SQL Server
-
-Open **SQL Server Management Studio (SSMS)** and:
-
-- Create a new database
-- Import the generated CSV files
-- Execute `analysis_queries.sql`
-
----
-
-## 6. Open Power BI
-
-Open:
-
-```text
-powerbi/Mercedes_Sales_Dashboard.pbix
-```
-
-Refresh the data source if required.
-
----
-
-# 📊 Project Statistics
+## 📊 Project Stats
 
 | Metric | Value |
-|---------|-------|
-| Dataset Period | 2023 – 2025 |
-| Dashboard Pages | 7 |
-| SQL Queries | 50+ |
-| Database Tables | 3 |
-| Python Scripts | 2 |
-| Dashboard Visuals | 40+ |
-| KPIs | 10+ |
-| DAX Measures | 25+ |
-| Database Platforms | SQLite + SQL Server |
-| BI Tool | Power BI |
+|---|---|
+| Dataset period | 2023 – 2025 |
+| Dashboard pages | 7 |
+| SQL queries | 50+ |
+| Database tables | 3 |
+| DAX measures | 25+ |
+| Database platforms | SQLite + SQL Server |
 
 ---
 
-# 📌 Data Notes
+## 📌 Data Notes
 
-- Dataset spans **January 2023 – December 2025**.
-- Data is synthetic and intended for educational purposes.
-- Missing values were handled during ETL.
-- Duplicate records were removed.
-- Price outliers were flagged rather than deleted.
-- Loss-making transactions were preserved for business analysis.
-- "Unknown" regions remain available for auditability while being excluded from dashboard KPIs where appropriate.
+- Data is synthetic, for educational/portfolio purposes
+- Duplicate records removed; missing `Price`/`Units_Sold` dropped; missing `Region` filled as `"Unknown"`
+- Price outliers and loss-making transactions were **flagged, not deleted** — preserved for impact analysis
+- `"Unknown"` region is retained in tables/SQL for auditability, but excluded from dashboard charts and KPIs to keep visuals focused on primary segments
 
 ---
 
-# 🎓 Learning Outcomes
-
-This project strengthened my understanding of:
-
-- End-to-End ETL Development
-- Data Cleaning & Validation
-- Feature Engineering
-- Relational Database Design
-- SQL Query Optimization
-- Window Functions
-- Business KPI Development
-- Data Migration
-- Microsoft SQL Server
-- SQL Server Management Studio (SSMS)
-- Power BI Dashboard Design
-- DAX Calculations
-- Git & GitHub Workflow
-
----
-
-# 📬 Contact
+## 📬 Contact
 
 **Anjali Singh**
-
-- GitHub: https://github.com/ANJALI7203
-- LinkedIn: *(Add your LinkedIn profile here)*
-
----
-
-# 📄 License
-
-This project uses **synthetic/sample data** for educational and portfolio purposes only.
-
-Mercedes-Benz and all related trademarks belong to their respective owners.
-
-This project is **not affiliated with, sponsored by, or endorsed by Mercedes-Benz AG.**
+- GitHub: [github.com/ANJALI7203](https://github.com/ANJALI7203)
+- LinkedIn: *(add your LinkedIn profile here)*
 
 ---
 
-## ⭐ Support
+## 📄 License
 
-If you found this project helpful or interesting, consider giving it a ⭐ on GitHub.
+Synthetic/sample data, for educational and portfolio purposes only. Not affiliated with, sponsored by, or endorsed by Mercedes-Benz AG.
 
-Feedback and suggestions are always welcome!
+---
+
+⭐ If you found this project useful, consider starring the repo!
