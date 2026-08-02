@@ -22,11 +22,11 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 
 | Executive Overview | Model Performance |
 |---|---|
-| ![Executive Overview](images/Executive_Overview.png) | ![Model Performance](image/Model_Performance.png) |
+| ![Executive Overview](images/Executive_Overview.png) | ![Model Performance](images/Model_Performnace.png) |
 
 | Regional Insights | Profitability Analysis |
 |---|---|
-| ![Regional Insights](image/Regional_Insights.png) | ![Profitability Analysis](image/Profitability_Analysis.png) |
+| ![Regional Insights](images/Regional_Insights.png) | ![Profitability Analysis](images/Probablity_Analysis.png) |
 
 | Time Trends | Model × Region Cross-Analysis |
 |---|---|
