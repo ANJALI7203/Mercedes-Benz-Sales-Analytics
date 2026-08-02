@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/be0abd99-b46f-44f3-8e58-9cf0aeb0e57f
 
 | Cover Page | Executive Overview |
 |------------|--------------------|
-| ![](images/Cover_Page.png) | ![](images/Executive_Overview.png) |
+| ![](images/Home_Page.png) | ![](images/Executive_Overview.png) |
 
 | Model Performance | Regional Insights |
 |-------------------|------------------|
