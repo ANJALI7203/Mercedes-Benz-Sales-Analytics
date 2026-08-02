@@ -2,7 +2,7 @@
 
 End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.
 
-![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
+![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power BI-yellow)
 
 ---
 
@@ -22,15 +22,15 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 
 | Executive Overview | Model Performance |
 |---|---|
-| ![Executive Overview](image/Executive%20Overview.png) | ![Model Performance](image/Model%20Performance.png) |
+| ![Executive Overview](image/Executive Overview.png) | ![Model Performance](image/Model Performance.png) |
 
 | Regional Insights | Profitability Analysis |
 |---|---|
-| ![Regional Insights](image/Regional%20Insights.png) | ![Profitability Analysis](image/Profitability%20Analysis.png) |
+| ![Regional Insights](image/Regional Insights.png) | ![Profitability Analysis](image/Profitability Analysis.png) |
 
 | Time Trends | Model × Region Cross-Analysis |
 |---|---|
-| ![Time Trends](image/Sales%20Performance.png) | ![Cross Analysis](image/Strategic%20Insights.png) |
+| ![Time Trends](image/Sales Performance.png) | ![Cross Analysis](image/Strategic Insights.png) |
 
 ---
 
@@ -77,7 +77,7 @@ Mercedes-Benz-Sales-Analytics/
 └── README.md
 ```
 
-> **Note on filenames:** Several image files above contain spaces (e.g. `Executive Overview.png`). This works with `%20`-encoded markdown links (used above), but spaces in filenames are a common source of broken links in git tools, terminals, and other renderers. If you run into issues, renaming to `executive-overview.png` style (no spaces) is more robust — just update the links above to match.
+> **Note on filenames:** Several image files above contain spaces (e.g. `Executive Overview.png`). This works with ` `-encoded markdown links (used above), but spaces in filenames are a common source of broken links in git tools, terminals, and other renderers. If you run into issues, renaming to `executive-overview.png` style (no spaces) is more robust — just update the links above to match.
 
 > **Note on page naming:** `Sales Performance.png` and `Strategic Insights.png` correspond to the **Time Trends** and **Model × Region Cross-Analysis** pages respectively (per the Power BI cover page tile names). Consider aligning the cover page tile labels, sidebar, and filenames to use the same names throughout the project for consistency.
 
