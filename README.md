@@ -2,7 +2,7 @@
 
 End-to-end analytics project: **Python (ETL) → SQL (analysis) → Power BI (visualization)**.
 
-![Status](https://img.shields.io/badge/status-in%20progress-yellow) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
+![Status](https://img.shields.io/badge/status-complete-brightgreen) ![Python](https://img.shields.io/badge/python-pandas-blue) ![SQL](https://img.shields.io/badge/database-SQLite-lightgrey) ![Power BI](https://img.shields.io/badge/dashboard-Power%20BI-yellow)
 
 ---
 
@@ -14,30 +14,65 @@ The goal is to demonstrate a complete, reproducible analytics workflow — from 
 
 ---
 
+## 🎬 Demo
+
+<!-- Video demo of the interactive filter panel and dashboard navigation -->
+https://github.com/user-attachments/assets/REPLACE-WITH-YOUR-VIDEO-ID
+
+<!-- If GitHub doesn't auto-embed, use: -->
+<!-- [Watch the demo](assets/demo/Mercedes_Dashboard_Demo.mp4) -->
+
+| Executive Overview | Model Performance |
+|---|---|
+| ![Executive Overview](assets/screenshots/executive_overview.png) | ![Model Performance](assets/screenshots/model_performance.png) |
+
+| Regional Insights | Profitability Analysis |
+|---|---|
+| ![Regional Insights](assets/screenshots/regional_insights.png) | ![Profitability Analysis](assets/screenshots/profitability_analysis.png) |
+
+| Time Trends | Model × Region Cross-Analysis |
+|---|---|
+| ![Time Trends](assets/screenshots/time_trends.png) | ![Cross Analysis](assets/screenshots/cross_analysis.png) |
+
+---
+
 ## 🗂️ Project Structure
 
 ```
-mercedes-sales-analytics/
+Mercedes-Benz-Sales-Analytics/
+│
+├── assets/
+│   ├── screenshots/
+│   │   ├── cover_page.png
+│   │   ├── executive_overview.png
+│   │   ├── model_performance.png
+│   │   ├── regional_insights.png
+│   │   ├── profitability_analysis.png
+│   │   ├── time_trends.png
+│   │   └── cross_analysis.png
+│   └── demo/
+│       └── Mercedes_Dashboard_Demo.mp4
 │
 ├── data/
 │   ├── raw/
-│   │   └── Mercedes_Sales_Data.csv        # Original raw dataset
+│   │   ├── Mercedes_Sales_Data.csv
+│   │   └── Mercedes_Sales_Data.xlsx
 │   └── cleaned/
-│       ├── mercedes_cleaned.csv           # Cleaned flat file (Model/Region as text)
-│       ├── mercedes.db                    # SQLite relational database
-│       ├── Sales.csv                      # Exported Sales fact table
-│       ├── Models.csv                     # Exported Models dimension table
-│       └── Regions.csv                    # Exported Regions dimension table
+│       ├── mercedes_cleaned.csv
+│       ├── mercedes.db
+│       ├── Sales.csv
+│       ├── Models.csv
+│       └── Regions.csv
 │
 ├── scripts/
-│   ├── etl_pipeline.py                    # Load → validate → clean → engineer → export
-│   └── export_sqlite_tables.py            # Exports SQLite tables back to CSV
+│   ├── etl_pipeline.py
+│   └── export_sqlite_tables.py
 │
 ├── sql/
-│   └── analysis_queries.sql               # 50+ exploratory & analytical SQL queries
+│   └── analysis_queries.sql
 │
 ├── powerbi/
-│   └── Mercedes_Sales_Dashboard.pbix       # Final interactive dashboard
+│   └── Mercedes_Sales_Dashboard.pbix
 │
 ├── requirements.txt
 ├── .gitignore
